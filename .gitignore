@@ -11,4 +11,4 @@ yarn-error.log
 *.sln
 
 # uni-app
-unpackage/
+unpackage/dist/
