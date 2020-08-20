@@ -12,30 +12,27 @@ import storage from "../storage/index.js";
  */
 const request = function(url, method, data) {
 	return new Promise((resolve, reject) => {
-			const options = {
-				url: config.baseUrl + url,
-				method: method,
-				data: data,
-				success: (res) => {
-					res.data.status = res.statusCode;
-					resolve(res.data);
-				},
-				fail: (res) => {
-					err.data.status = err.statusCode;
-					reject(err.data);
-				}
-			};
-			// 如果有登录状态token的话，则添加到请求头
-			if (storage.get("token")) {
-				// 在 headers 中设置 Authorization 属性放token，token是存在缓存中的
-				options.header = {
-					"Authorization": `Bearer ${storage.get("token")}`;
-				};
+		const options = {
+			url: config.baseUrl + url,
+			method: method,
+			data: data,
+			success: (res) => {
+				res.data.status = res.statusCode;
+				resolve(res.data);
+			},
+			fail: (res) => {
+				err.data.status = err.statusCode;
+				reject(err.data);
 			}
-
-			uni.request(options);
-
+		};
+		// 如果有登录状态token的话，则添加到请求头
+		if (storage.get("token")) {
+			// 在 headers 中设置 Authorization 属性放token，token是存在缓存中的
+			options.header = {
+				"Authorization": `Bearer ${storage.get("token")}`
+			};
 		}
+		uni.request(options);
 	});
 };
 
