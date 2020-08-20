@@ -1,0 +1,24 @@
+{
+  "name": "remember-uni-app",
+  "version": "1.0.0",
+  "description": "<p align=\"center\">\r </p>\r <h1 align=\"center\">remember-uni-app</h1>",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yiyungent/remember-uni-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yiyungent/remember-uni-app/issues"
+  },
+  "homepage": "https://github.com/yiyungent/remember-uni-app#readme",
+  "dependencies": {
+    "moment": "^2.27.0",
+    "qs": "^6.9.4"
+  }
+}
